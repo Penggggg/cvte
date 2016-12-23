@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">     
+    <meta charset="utf-8">             
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">     
+    <meta content="yes" name="apple-mobile-web-app-capable">     
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">     
+    <meta content="telephone=no" name="format-detection">
+    <title>Document</title>
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+</head>
+<body>
+    <script src="../dist/app.ec09a367.js"></script>
+    
+    <img src="http://images2015.cnblogs.com/blog/896425/201612/896425-20161215130425058-468499484.png" alt="" >
+    <img src="http://images2015.cnblogs.com/blog/8964-468499484.png" alt="" >
+
+
+<script>
+    localStorage.hello = 'CVTE';
+    localStorage.myName = "HZP";
+    document.cookie="username=John Smith";
+    document.cookie="school=CVTE";
+    setTimeout(function(){
+        console.log({
+            data: '13',
+            sex: 'man'
+        });
+        console.error(123123);
+        console.info([1,2,3,'456']);
+        console.warn(false);
+        console.error(123123);
+        console.error(123123);
+        console.error(123123);
+        console.info([1,2,3,'456']);
+        console.warn(false);
+        console.error(123123);
+        console.error(123123);
+        console.error(123123);
+        console.error(123123);
+        console.error(123123);
+        console.error(123123);
+        setTimeout(function(){
+           test2();
+           test( );
+           setTimeout(function(){
+               b = a; 
+           })
+        }, 7000)
+    }, 1000)
+
+    function test2( ) {
+        console.info('hahahahah')
+    }
+
+    function test( ) {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.open("GET","https://api.github.com/users/Penggggg",true);
+        xmlhttp.send();
+
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.open("POST","https://api.github.com/users/Penggggg",true);
+        xmlhttp.send(JSON.stringify({name: 'hzp'}));
+
+        var xmlhttp2 = new XMLHttpRequest();
+        xmlhttp2.open("GET","http://www.runoob.com/try/ajax/ajax_info.js",true);
+        xmlhttp2.send();
+    }
+</script>
+</body>
+</html>

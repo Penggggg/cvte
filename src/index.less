@@ -1,0 +1,244 @@
+* { padding: 0; margin: 0; font-family: "Microsoft YaHei"}
+div { box-sizing: border-box ;}
+li { list-style: none }
+a { cursor: pointer; text-decoration: none; }
+a:active, a:link, a:hover { text-decoration: none; }
+
+@nav-hight: 50px;
+@nav-small-height: 40px;
+@theme-blue: rgb( 45, 183, 245);
+@theme_blue-lighter: rgb( 149, 204, 245);
+
+.title-mix() {
+    padding: 10px 15px;
+    background: rgb( 127, 139, 147);
+    color: #fff;
+    box-sizing: border-box;
+    margin: 0;
+    font-size: 18px;
+}
+
+.clear-mix() {
+        clear:both;
+        content:'.';
+        display:block;
+        width: 0;
+        height: 0;
+        visibility:hidden;
+}
+
+.fc_btn {
+    position: fixed;
+    right: 5%;bottom: 5%;
+    color: red;
+    z-index: 100;
+}
+
+.fc_panel {
+    z-index: 80;
+    transition: all ease 0.4s;
+    position: fixed;
+    width: 100%;height: 100%;
+    transform: translate3d(0, 100%, 0);
+    -webkit-transform:  translate3d(0, 100%, 0);
+    left: 0;
+    top: 0;
+    background: #f4f7fb;
+    opacity: 0;
+
+    .nav-bar {
+        height: @nav-hight;
+        background: @theme-blue;
+
+        a {
+            display: inline-block;
+            height: auto;width: 33.3%;
+            line-height: @nav-hight;
+            text-align: center;
+            color: #fff;
+            float: left;
+        }
+
+        a.active {
+            background: @theme_blue-lighter;
+        }
+    }
+    .nav-bar:after {
+        .clear-mix()
+    }
+
+    .show-area {
+        width: 100%;
+        background: rgb( 244, 247, 251);
+
+        li {
+            padding: 10px 20px;
+            border-bottom: 1px solid #eee;
+            color: #666;
+            box-sizing: border-box;
+
+            span {
+                margin-top: 5px;
+            }
+        }
+        
+
+        /** Console 面板 **/
+        .console {
+
+        ul {
+            overflow: scroll;
+            height: 600px;
+        }
+
+            li.console.error span{
+                color: red;
+            }
+
+            li.console.info span{
+                color:blue;
+            }
+
+            li.console.warn span{
+                color:rgb(250, 196, 80);
+            }
+
+            .console-select-bar {
+
+                background: #fff;
+                height: @nav-small-height;
+
+                a {
+                    display: inline-block;
+                    width: 16%;
+                    text-align: center;
+                    line-height: @nav-small-height;
+                    color: #666;
+                    float: left;
+                    cursor: pointer;
+
+                    span {
+                        padding: 4px 11px;
+                        border-radius: 6px;
+                    }
+                }
+
+                a.active span {
+                    background: rgb( 104, 106, 109);
+                    color: #fff;
+                }
+            }
+
+            .console-select-bar:after {
+                .clear-mix()
+            }
+        }
+
+        /** NetWork 面板 **/
+        .network {
+            color: #666;
+
+            h3.title {
+                .title-mix()
+            }
+
+            ul {
+                li.error {
+                    color: red
+                }
+                li.error span, li span {
+                    color: #00a0e9;
+                    display: block;
+                    word-break: break-all;
+                }
+            }
+
+            ul.network-list {
+                max-height: 300px;
+                overflow: scroll;
+            }
+
+        }
+
+         /** NetWork-detail 面板 **/
+         .network-detail {
+
+             .title-bar {
+                padding: 5px 15px;
+                color: #666;
+                box-sizing: border-box;
+             }
+
+             h3.title {
+                .title-mix()
+            }   
+
+            li.body {
+                border: none;
+            }
+
+            li {
+                word-break: break-word;
+            }
+
+            ul {
+                max-height: 300px;
+                overflow: scroll;
+            }          
+         }
+
+        /** Resource 面板 **/
+        .storage {
+
+            .list-title {
+                position: relative;
+                
+                span {
+                    position: absolute;
+                    right: 10%; top: 25%;
+                    color: #fff;
+                }
+            }
+
+            ul.storage-list {
+                max-height: 300px;
+                overflow: scroll;
+            }
+            
+            h3.title {
+                .title-mix()
+            } 
+
+            li.ls-item{
+                position: relative;
+
+                b {
+                    position: absolute;
+                    right: 10%;top: 30%;
+                    color: red;
+                }
+
+                span.key {
+                    padding: 0 20px;
+                    text-align: left;
+                    display: inline-block;
+                    box-sizing: border-box;
+                    width: 120px;
+                    overflow-x: scroll;
+                    margin: 0px;
+                }
+
+                span.value {
+                    padding: 0 20px;
+                }
+            }
+        }
+    }
+}
+
+.fc_panel.show{
+    transform: translate3d(0, 0, 0);
+    -webkit-transform:  translate3d(0, 0, 0);
+    opacity: 1;
+}
+
